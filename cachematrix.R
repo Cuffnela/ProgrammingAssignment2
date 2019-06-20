@@ -1,12 +1,16 @@
 ## 
+## Program intended to reduce run time by caching matrix inverse values
+## checks if inverse has already been computed by checking cached values
+## pulls from the cache if the matrix has not changed, otherwise computes 
+## and stores for next cache check.
 ## 
 
 ## Function makeCacheMatrix takes in a matrix and returns a list with four elements
 ##
 ## Returned functions in list:
-## set: assigns the value of the matrix
+## set: assigns the value of the matrix and caches values
 ## get: gets the cached matrix
-## setInverse: uses the solve function to set inverse
+## setInverse: uses the solve function to set inverse and caches inverse
 ## getInverse: gets the cached inverse
 
 makeCacheMatrix <- function(x = matrix()) {
